@@ -5,6 +5,8 @@ import Footer from "./components/Footer.jsx"
 
 function App() {
   
+
+  const NASA_KEY = import.meta.env.VITE_NASA_API_KEY
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(false)
 
@@ -18,7 +20,7 @@ function App() {
 
     async function fetchAPIData() {
       const url = "https://api.nasa.gov/planetary/apod" +
-      `?api_key=KYbufYqVvHR3AhrlbfIi28eptGfY31SImla7PqXv`
+      `?api_key=${NASA_KEY}`
 
       const today = (new Date()).toDateString()
       const localKey = `NASA-${today}`
